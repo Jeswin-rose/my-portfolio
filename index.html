@@ -2,571 +2,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeswin Rose Antony | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeswin Rose Antony | Portfolio</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #080f1e;
-    color: #e5e7eb;
-    line-height: 1.7;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1020;
+            color: #edf2ff;
+            line-height: 1.6;
+        }
 
-/* NAVIGATION */
-header {
-    background: #101a2b;
-    padding: 18px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    flex-wrap: wrap;
-}
+        a {
+            color: #70d6ff;
+            text-decoration: none;
+        }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-}
+        a:hover {
+            text-decoration: underline;
+        }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #10182b;
+            border-bottom: 1px solid #263451;
+        }
 
-nav a {
-    text-decoration: none;
-    color: #d1d5db;
-    font-size: 14px;
-}
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-nav a:hover {
-    color: #38bdf8;
-}
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
 
-/* HERO SECTION */
-#home {
-    min-height: 90vh;
-    padding: 100px 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
-.small-intro {
-    font-size: 24px;
-    color: #38bdf8;
-    margin-bottom: 10px;
-}
+        nav ul a {
+            color: #b8c5df;
+            font-size: 14px;
+        }
 
-.hero-name {
-    font-size: clamp(45px, 8vw, 82px);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.1;
-    margin-bottom: 20px;
-}
+        nav ul a:hover {
+            color: #70d6ff;
+        }
 
-.hero-role {
-    font-size: 25px;
-    color: #38bdf8;
-    margin-bottom: 12px;
-}
+        main {
+            max-width: 1050px;
+            margin: auto;
+            padding: 25px;
+        }
 
-.hero-description {
-    font-size: 17px;
-    color: #cbd5e1;
-}
+        section {
+            padding: 65px 0 20px;
+            scroll-margin-top: 70px;
+        }
 
-.primary-btn {
-    display: inline-block;
-    margin-top: 28px;
-    padding: 13px 27px;
-    background: #0284c7;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: .3s;
-}
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.primary-btn:hover {
-    background: #0369a1;
-    transform: translateY(-4px);
-}
+        .hero small {
+            color: #70d6ff;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
 
-/* SECTION STYLES */
-section:not(#home) {
-    padding: 75px 8%;
-}
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 65px);
+            margin: 15px 0;
+            line-height: 1.15;
+        }
 
-.section-heading {
-    font-size: 34px;
-    color: #38bdf8;
-    text-align: center;
-    margin-bottom: 40px;
-}
+        .hero h2 {
+            font-size: 23px;
+            color: #aab6d3;
+            font-weight: normal;
+        }
 
-/* CARD GRID */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 25px;
-}
+        .hero p {
+            color: #aab6d3;
+            max-width: 600px;
+            margin-top: 15px;
+        }
 
-/* GENERAL CARDS */
-.info-card {
-    background: #111e32;
-    border: 1px solid #263b55;
-    border-radius: 15px;
-    padding: 30px;
-    transition: .3s;
-    min-height: 150px;
-}
+        .buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-.info-card:hover {
-    transform: translateY(-7px);
-    border-color: #38bdf8;
-    box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
+        .btn {
+            display: inline-block;
+            padding: 11px 20px;
+            border: 1px solid #70d6ff;
+            border-radius: 7px;
+        }
 
-.info-card h3 {
-    font-size: 21px;
-    color: #38bdf8;
-    margin-bottom: 12px;
-}
+        .primary {
+            background: #70d6ff;
+            color: #07111f;
+            font-weight: bold;
+        }
 
-.info-card p {
-    color: #cbd5e1;
-}
+        h2.section-title {
+            font-size: 30px;
+            margin-bottom: 22px;
+        }
 
-/* ABOUT CARD */
-.about-grid {
-    grid-template-columns: minmax(0, 800px);
-    justify-content: center;
-}
+        .card {
+            background: #121a2e;
+            border: 1px solid #263451;
+            border-radius: 12px;
+            padding: 23px;
+        }
 
-.about-card {
-    text-align: center;
-    padding: 40px;
-}
+        .card h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
 
-.about-card p {
-    font-size: 18px;
-}
+        .card p {
+            color: #aab6d3;
+            margin-bottom: 10px;
+        }
 
-/* CERTIFICATE FLIP CARDS */
-.certificate-card {
-    width: 100%;
-    height: 260px;
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    perspective: 1000px;
-    color: white;
-    font-family: inherit;
-    text-align: left;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
 
-.certificate-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform .75s;
-    transform-style: preserve-3d;
-}
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-.certificate-card.flipped .certificate-inner {
-    transform: rotateY(180deg);
-}
+        .skill {
+            background: #1b2945;
+            color: #70d6ff;
+            padding: 10px 18px;
+            border-radius: 25px;
+        }
 
-.certificate-front,
-.certificate-back {
-    position: absolute;
-    inset: 0;
-    border-radius: 15px;
-    border: 1px solid #263b55;
-    background: #111e32;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+        }
 
-.certificate-front h3,
-.certificate-back h3 {
-    color: #38bdf8;
-    font-size: 21px;
-    margin-bottom: 12px;
-}
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
 
-.certificate-front p,
-.certificate-back p {
-    color: #cbd5e1;
-}
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #aab6d3;
+            border-top: 1px solid #263451;
+            margin-top: 60px;
+        }
 
-.certificate-back {
-    background: #172943;
-    border-color: #38bdf8;
-    transform: rotateY(180deg);
-}
+        @media (max-width: 600px) {
+            nav {
+                justify-content: center;
+            }
 
-.click-text {
-    color: #38bdf8;
-    font-size: 13px;
-    margin-top: 18px;
-}
+            nav ul {
+                justify-content: center;
+                gap: 12px;
+            }
 
-/* CONTACT */
-.contact-grid {
-    grid-template-columns: minmax(0, 700px);
-    justify-content: center;
-}
-
-.contact-card {
-    text-align: center;
-}
-
-.contact-card p {
-    margin: 15px 0;
-    overflow-wrap: anywhere;
-}
-
-.contact-card a {
-    color: #38bdf8;
-    text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    background: #101a2b;
-    padding: 25px;
-    color: #94a3b8;
-}
-
-/* MOBILE RESPONSIVE */
-@media(max-width: 650px) {
-    header {
-        justify-content: center;
-        gap: 15px;
-    }
-
-    nav {
-        justify-content: center;
-        gap: 12px;
-    }
-
-    #home {
-        min-height: 75vh;
-        padding: 75px 6%;
-    }
-
-    section:not(#home) {
-        padding: 55px 6%;
-    }
-
-    .hero-name {
-        font-size: 43px;
-    }
-
-    .hero-role {
-        font-size: 21px;
-    }
-}
-</style>
+            .hero {
+                min-height: 65vh;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
 <header>
-    <div class="logo">Jeswin.</div>
-
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="logo">Jeswin.</a>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 </header>
 
-<!-- HOME -->
-<section id="home">
+<main>
 
-    <p class="small-intro">Hello, I'm</p>
+    <!-- HOME -->
+    <section class="hero" id="home">
 
-    <h1 class="hero-name">Jeswin Rose Antony</h1>
+        <small>WELCOME TO MY PORTFOLIO</small>
 
-    <h2 class="hero-role"> IMCA Student| Aspiring Technology Professional</h2>
+        <h1>
+            Hi, I'm<br>
+            Jeswin Rose Antony.
+        </h1>
 
-    <p class="hero-description">
-        I am an IMCA student interested in programming, data and technology. 
-	I enjoy learning new skills and building practical projects using Python and other technologies.
-    </p>
+        <h2>IMCA Student | Aspiring Technology Professional</h2>
 
-    <a href="#about" class="primary-btn">Explore My Portfolio</a>
+        <p>
+            I am passionate about learning technology, exploring new ideas,
+            and building projects that solve real-world problems.
+        </p>
 
-</section>
-
-<!-- ABOUT ME -->
-<section id="about">
-
-    <h2 class="section-heading">About Me</h2>
-
-    <div class="card-grid about-grid">
-
-        <div class="info-card about-card">
-            <h3>Who Am I?</h3>
-
-            <p>
-                Hello! I am Jeswin Rose Antony, an Integrated Master of Computer Applications (IMCA) student at Rajagiri Higher Secondary School. 
-		I am developing my knowledge in programming, databases and technology through my studies, certifications and practical projects. 
-		I am particularly interested in Python, data science and artificial intelligence and machine learning.
-            </p>
+        <div class="buttons">
+            <a href="#projects" class="btn primary">View My Projects</a>
+            <a href="#contact" class="btn">Contact Me</a>
         </div>
 
-    </div>
-</section>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2 class="section-title">My Technical Skills</h2>
 
-    <div class="grid">
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="section-title">About Me</h2>
+
         <div class="card">
-            <h3>Programming</h3>
+
+            <p>
+                I am an Integrated Master of Computer Applications (IMCA)
+                student at Rajagiri Higher Secondary School.
+            </p>
+
+            <p>
+                I am interested in programming, data, artificial intelligence,
+                and emerging technologies. I enjoy learning through practical
+                work and developing applications that solve everyday problems.
+            </p>
+
+            <p>
+                I am continuously improving my technical knowledge,
+                exploring new tools, and gaining experience through projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="card">
+
+            <h3>Integrated Master of Computer Applications (IMCA)</h3>
+
+            <p>Rajagiri Higher Secondary School</p>
+
+            <p>Currently Pursuing</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <h2 class="section-title">My Skills</h2>
+
+        <div class="card skills">
+
             <span class="skill">Python</span>
-            <span class="skill">C</span>
-            <span class="skill">SQL</span>
-        </div>
-
-        <div class="card">
-            <h3>Data & Analytics</h3>
             <span class="skill">Microsoft Power BI</span>
+            <span class="skill">C Programming</span>
+            <span class="skill">SQL</span>
+
         </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>MediCare</h3>
+
+                <p>
+                    MediCare is a medicine reminder web application
+                    designed to help users manage their medicine schedules.
+                </p>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    Python, Flask, HTML, CSS
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>ScamShield</h3>
+
+                <p>
+                    ScamShield is a rule-based scam message detection
+                    system that identifies suspicious patterns in messages.
+                </p>
+
+                <p>
+                    <strong>Technologies:</strong>
+                    Python, Streamlit
+                </p>
+
+                <a class="project-link"
+                   href="https://github.com/Jeswin-rose/ScamShield"
+                   target="_blank"
+                   rel="noopener">
+                    View Project on GitHub →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+
+        <h2 class="section-title">Certificates & Achievements</h2>
+
+        <div class="grid">
+
+            <div class="card">
+
+                <h3>Python – KELTRON</h3>
+
+                <p>Certification of Excellence</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Business Organization and Entrepreneurship</h3>
+
+                <p>Certificate of Completion</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Foundations of Data Science, AI & Machine Learning
+                    Training Programme
+                </h3>
+
+                <p>Certificate of Completion</p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Python (Basic) – HackerRank</h3>
+
+                <p>Certificate of Accomplishment</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2 class="section-title">Contact Me</h2>
 
         <div class="card">
-            <h3>Web Technologies</h3>
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">Flask</span>
-            <span class="skill">Streamlit</span>
-        </div>
-    </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-
-    <h2 class="section-heading">My Projects</h2>
-
-    <div class="card-grid">
-
-        <div class="info-card">
-            <h3>MediCare</h3>
             <p>
-                A medicine reminder web application developed using
-                Python, Flask, HTML and CSS.
+                Thank you for visiting my portfolio.
+                Feel free to connect with me through the links below.
             </p>
-        </div>
 
-        <div class="info-card">
-            <h3>ScamShield</h3>
-            <p>
-                A rule-based scam message detection system developed
-                using Python and Streamlit.
-            </p>
-        </div>
+            <div class="contact-links">
 
-    </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section id="certificates">
-
-    <h2 class="section-heading">Certifications & Achievements</h2>
-
-    <p style="text-align:center;color:#94a3b8;margin-bottom:30px;">
-        Click each card to flip and view certificate details.
-    </p>
-
-    <div class="card-grid">
-
-        <!-- PYTHON -->
-        <button class="certificate-card" type="button"
-                aria-pressed="false" onclick="flipCard(this)">
-            <div class="certificate-inner">
-
-                <div class="certificate-front">
-                    <h3>Python</h3>
-                    <p>KELTRON Certification of Excellence</p>
-                    <span class="click-text">Click to view details ↻</span>
-                </div>
-
-                <div class="certificate-back">
-                    <h3>Python Certification</h3>
-                    <p>Certification of Excellence awarded by KELTRON.</p>
-                    <span class="click-text">Click to flip back</span>
-                </div>
-
-            </div>
-        </button>
-
-        <!-- BUSINESS -->
-        <button class="certificate-card" type="button"
-                aria-pressed="false" onclick="flipCard(this)">
-            <div class="certificate-inner">
-
-                <div class="certificate-front">
-                    <h3>Business Organization and Entrepreneurship</h3>
-                    <p>Certificate of Completion</p>
-                    <span class="click-text">Click to view details ↻</span>
-                </div>
-
-                <div class="certificate-back">
-                    <h3>Business Organization and Entrepreneurship</h3>
-                    <p>Certificate of Completion.</p>
-                    <span class="click-text">Click to flip back</span>
-                </div>
-
-            </div>
-        </button>
-
-        <!-- DATA SCIENCE + AI -->
-        <button class="certificate-card" type="button"
-                aria-pressed="false" onclick="flipCard(this)">
-            <div class="certificate-inner">
-
-                <div class="certificate-front">
-                    <h3>Foundations of Data Science</h3>
-                    <p>AI & Machine Learning Training Programme</p>
-                    <span class="click-text">Click to view details ↻</span>
-                </div>
-
-                <div class="certificate-back">
-                    <h3>Foundations of Data Science, AI & Machine Learning</h3>
-                    <p>
-                        Foundations of Data Science, AI & Machine Learning
-                        Training Programme – Certificate of Completion.
-                    </p>
-                    <span class="click-text">Click to flip back</span>
-                </div>
-
-            </div>
-        </button>
-
-        <!-- POWER BI -->
-        <button class="certificate-card" type="button"
-                aria-pressed="false" onclick="flipCard(this)">
-            <div class="certificate-inner">
-
-                <div class="certificate-front">
-                    <h3>Microsoft Power BI</h3>
-                    <p>Certificate</p>
-                    <span class="click-text">Click to view details ↻</span>
-                </div>
-
-                <div class="certificate-back">
-                    <h3>Microsoft Power BI</h3>
-                    <p>Microsoft Power BI certificate.</p>
-                    <span class="click-text">Click to flip back</span>
-                </div>
-
-            </div>
-        </button>
-
-        <!-- HACKERRANK -->
-        <button class="certificate-card" type="button"
-                aria-pressed="false" onclick="flipCard(this)">
-            <div class="certificate-inner">
-
-                <div class="certificate-front">
-                    <h3>HackerRank Python (Basic)</h3>
-                    <p>Certificate of Accomplishment</p>
-                    <span class="click-text">Click to view details ↻</span>
-                </div>
-
-                <div class="certificate-back">
-                    <h3>HackerRank Python (Basic)</h3>
-                    <p>Certificate of Accomplishment in Python (Basic).</p>
-                    <span class="click-text">Click to flip back</span>
-                </div>
-
-            </div>
-        </button>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-
-    <h2 class="section-heading">Contact Me</h2>
-
-    <div class="card-grid contact-grid">
-
-        <div class="info-card contact-card">
-            <h3>Get In Touch</h3>
-
-            <p>
-                Email:
                 <a href="mailto:jeswinrose8@gmail.com">
-                    jeswinrose8@gmail.com
+                    Email
                 </a>
-            </p>
 
-            <p>
-                GitHub:
-                <a href="https://github.com/Jeswin-rose" target="_blank">
-                    View GitHub Profile
+                <a href="https://github.com/Jeswin-rose"
+                   target="_blank"
+                   rel="noopener">
+                    GitHub
                 </a>
-            </p>
 
-            <p>
-                LinkedIn:
                 <a href="https://www.linkedin.com/in/jeswin-rose-antony-448506431/"
-                   target="_blank">
-                    View LinkedIn Profile
+                   target="_blank"
+                   rel="noopener">
+                    LinkedIn
                 </a>
-            </p>
+
+            </div>
+
         </div>
 
-    </div>
-</section>
+    </section>
 
-<!-- FOOTER -->
+</main>
+
+
 <footer>
+
     <p>© 2026 Jeswin Rose Antony. All Rights Reserved.</p>
+
 </footer>
-
-<script>
-function flipCard(card) {
-    card.classList.toggle("flipped");
-
-    card.setAttribute(
-        "aria-pressed",
-        card.classList.contains("flipped")
-    );
-}
-</script>
 
 </body>
 </html>
