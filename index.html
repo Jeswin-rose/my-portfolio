@@ -16,160 +16,176 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #0b1120;
+    background: #080f1e;
     color: #e5e7eb;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* NAVBAR */
+/* NAVIGATION */
 header {
-    background: #111827;
-    padding: 20px 8%;
+    background: #101a2b;
+    padding: 18px 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     position: sticky;
     top: 0;
     z-index: 100;
+    flex-wrap: wrap;
 }
 
 .logo {
-    color: white;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: bold;
+    color: white;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 nav a {
-    color: #d1d5db;
     text-decoration: none;
-    margin: 10px;
-    transition: 0.3s;
+    color: #d1d5db;
+    font-size: 14px;
 }
 
 nav a:hover {
     color: #38bdf8;
 }
 
-/* SECTIONS */
-section {
-    padding: 75px 8%;
-}
-
-.section-title {
-    font-size: 32px;
-    color: #38bdf8;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* HERO */
-.hero {
-    min-height: 85vh;
+/* HERO SECTION */
+#home {
+    min-height: 90vh;
+    padding: 100px 8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.hero .hello {
+.small-intro {
+    font-size: 24px;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.hero-name {
+    font-size: clamp(45px, 8vw, 82px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-role {
     font-size: 25px;
     color: #38bdf8;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 
-.hero h1 {
-    font-size: clamp(42px, 7vw, 75px);
-    color: white;
-    line-height: 1.15;
-    margin-bottom: 15px;
-}
-
-.hero h2 {
-    color: #38bdf8;
-    font-size: 27px;
-    margin-bottom: 15px;
-}
-
-.hero p {
+.hero-description {
+    font-size: 17px;
     color: #cbd5e1;
-    font-size: 18px;
 }
 
-.btn {
+.primary-btn {
     display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
+    margin-top: 28px;
+    padding: 13px 27px;
     background: #0284c7;
     color: white;
-    border-radius: 7px;
     text-decoration: none;
-    transition: 0.3s;
+    border-radius: 8px;
+    transition: .3s;
 }
 
-.btn:hover {
+.primary-btn:hover {
     background: #0369a1;
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
-/* CARD LAYOUT */
-.cards {
+/* SECTION STYLES */
+section:not(#home) {
+    padding: 75px 8%;
+}
+
+.section-heading {
+    font-size: 34px;
+    color: #38bdf8;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* CARD GRID */
+.card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
-.card {
-    background: #172033;
-    padding: 28px;
-    border-radius: 14px;
-    border: 1px solid #263449;
-    transition: 0.3s;
+/* GENERAL CARDS */
+.info-card {
+    background: #111e32;
+    border: 1px solid #263b55;
+    border-radius: 15px;
+    padding: 30px;
+    transition: .3s;
+    min-height: 150px;
 }
 
-.card:hover {
+.info-card:hover {
     transform: translateY(-7px);
     border-color: #38bdf8;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
-.card h3 {
+.info-card h3 {
+    font-size: 21px;
     color: #38bdf8;
     margin-bottom: 12px;
-    font-size: 21px;
 }
 
-.card p {
+.info-card p {
     color: #cbd5e1;
 }
 
-/* ABOUT */
+/* ABOUT CARD */
+.about-grid {
+    grid-template-columns: minmax(0, 800px);
+    justify-content: center;
+}
+
 .about-card {
-    max-width: 850px;
-    margin: auto;
     text-align: center;
+    padding: 40px;
+}
+
+.about-card p {
     font-size: 18px;
 }
 
 /* CERTIFICATE FLIP CARDS */
 .certificate-card {
-    min-height: 240px;
-    background: transparent;
-    border: none;
-    padding: 0;
     width: 100%;
+    height: 260px;
+    border: none;
+    background: transparent;
+    padding: 0;
     cursor: pointer;
     perspective: 1000px;
-    color: inherit;
-    font: inherit;
+    color: white;
+    font-family: inherit;
     text-align: left;
 }
 
 .certificate-inner {
     position: relative;
     width: 100%;
-    height: 240px;
-    transition: transform 0.7s;
+    height: 100%;
+    transition: transform .75s;
     transform-style: preserve-3d;
 }
 
@@ -181,10 +197,10 @@ section {
 .certificate-back {
     position: absolute;
     inset: 0;
+    border-radius: 15px;
+    border: 1px solid #263b55;
+    background: #111e32;
     padding: 25px;
-    border-radius: 14px;
-    background: #172033;
-    border: 1px solid #263449;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,6 +211,7 @@ section {
 .certificate-front h3,
 .certificate-back h3 {
     color: #38bdf8;
+    font-size: 21px;
     margin-bottom: 12px;
 }
 
@@ -204,24 +221,29 @@ section {
 }
 
 .certificate-back {
-    background: #1e293b;
+    background: #172943;
     border-color: #38bdf8;
     transform: rotateY(180deg);
 }
 
-.click-hint {
-    margin-top: 15px;
+.click-text {
     color: #38bdf8;
     font-size: 13px;
+    margin-top: 18px;
 }
 
 /* CONTACT */
+.contact-grid {
+    grid-template-columns: minmax(0, 700px);
+    justify-content: center;
+}
+
 .contact-card {
     text-align: center;
 }
 
 .contact-card p {
-    margin: 12px 0;
+    margin: 15px 0;
     overflow-wrap: anywhere;
 }
 
@@ -230,35 +252,41 @@ section {
     text-decoration: none;
 }
 
+/* FOOTER */
 footer {
-    background: #111827;
     text-align: center;
+    background: #101a2b;
     padding: 25px;
     color: #94a3b8;
 }
 
-/* MOBILE */
-@media(max-width: 600px) {
+/* MOBILE RESPONSIVE */
+@media(max-width: 650px) {
     header {
-        flex-direction: column;
-        gap: 12px;
+        justify-content: center;
+        gap: 15px;
     }
 
     nav {
-        text-align: center;
+        justify-content: center;
+        gap: 12px;
     }
 
-    nav a {
-        display: inline-block;
-        margin: 5px;
+    #home {
+        min-height: 75vh;
+        padding: 75px 6%;
     }
 
-    section {
+    section:not(#home) {
         padding: 55px 6%;
     }
 
-    .hero {
-        min-height: 75vh;
+    .hero-name {
+        font-size: 43px;
+    }
+
+    .hero-role {
+        font-size: 21px;
     }
 }
 </style>
@@ -272,7 +300,7 @@ footer {
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#about">About Me</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#certificates">Certificates</a>
@@ -281,77 +309,78 @@ footer {
 </header>
 
 <!-- HOME -->
-<section class="hero" id="home">
+<section id="home">
 
-    <div class="hello">Hello, I'm</div>
+    <p class="small-intro">Hello, I'm</p>
 
-    <h1>Jeswin Rose Antony</h1>
+    <h1 class="hero-name">Jeswin Rose Antony</h1>
 
-    <h2>Python Developer | IMCA Student</h2>
+    <h2 class="hero-role"> IMCA Student| Aspiring Technology Professional</h2>
 
-    <p>Programming • Data • Technology</p>
+    <p class="hero-description">
+        I am an IMCA student interested in programming, data and technology. 
+	I enjoy learning new skills and building practical projects using Python and other technologies.
+    </p>
 
-    <a href="#about" class="btn">Explore My Portfolio</a>
+    <a href="#about" class="primary-btn">Explore My Portfolio</a>
 
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT ME -->
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+    <h2 class="section-heading">About Me</h2>
 
-    <div class="cards">
-        <div class="card about-card">
+    <div class="card-grid about-grid">
+
+        <div class="info-card about-card">
             <h3>Who Am I?</h3>
 
             <p>
-                I am an IMCA student interested in programming, data and
-                technology. I enjoy learning new skills and building
-                practical projects using Python and other technologies.
+                Hello! I am Jeswin Rose Antony, an Integrated Master of Computer Applications (IMCA) student at Rajagiri Higher Secondary School. 
+		I am developing my knowledge in programming, databases and technology through my studies, certifications and practical projects. 
+		I am particularly interested in Python, data science and artificial intelligence and machine learning.
             </p>
         </div>
-    </div>
 
+    </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
+    <h2 class="section-title">My Technical Skills</h2>
 
-    <h2 class="section-title">My Skills</h2>
-
-    <div class="cards">
-
+    <div class="grid">
         <div class="card">
-            <h3>Python</h3>
-            <p>Programming and application development.</p>
+            <h3>Programming</h3>
+            <span class="skill">Python</span>
+            <span class="skill">C</span>
+            <span class="skill">SQL</span>
         </div>
 
         <div class="card">
-            <h3>Microsoft Power BI</h3>
-            <p>Data visualization and business intelligence.</p>
+            <h3>Data & Analytics</h3>
+            <span class="skill">Microsoft Power BI</span>
         </div>
 
         <div class="card">
-            <h3>C Programming</h3>
-            <p>Programming fundamentals and problem solving.</p>
+            <h3>Web Technologies</h3>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Flask</span>
+            <span class="skill">Streamlit</span>
         </div>
-
-        <div class="card">
-            <h3>SQL</h3>
-            <p>Database queries and data management.</p>
-        </div>
-
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
 
-    <h2 class="section-title">My Projects</h2>
+    <h2 class="section-heading">My Projects</h2>
 
-    <div class="cards">
+    <div class="card-grid">
 
-        <div class="card">
+        <div class="info-card">
             <h3>MediCare</h3>
             <p>
                 A medicine reminder web application developed using
@@ -359,7 +388,7 @@ footer {
             </p>
         </div>
 
-        <div class="card">
+        <div class="info-card">
             <h3>ScamShield</h3>
             <p>
                 A rule-based scam message detection system developed
@@ -370,33 +399,32 @@ footer {
     </div>
 </section>
 
-<!-- CERTIFICATES -->
+<!-- CERTIFICATIONS -->
 <section id="certificates">
 
-    <h2 class="section-title">Certifications & Achievements</h2>
+    <h2 class="section-heading">Certifications & Achievements</h2>
 
     <p style="text-align:center;color:#94a3b8;margin-bottom:30px;">
-        Click on a certificate card to see more details.
+        Click each card to flip and view certificate details.
     </p>
 
-    <div class="cards">
+    <div class="card-grid">
 
         <!-- PYTHON -->
         <button class="certificate-card" type="button"
-            aria-pressed="false" onclick="flipCard(this)">
-
+                aria-pressed="false" onclick="flipCard(this)">
             <div class="certificate-inner">
 
                 <div class="certificate-front">
                     <h3>Python</h3>
                     <p>KELTRON Certification of Excellence</p>
-                    <span class="click-hint">Click to view details ↻</span>
+                    <span class="click-text">Click to view details ↻</span>
                 </div>
 
                 <div class="certificate-back">
                     <h3>Python Certification</h3>
                     <p>Certification of Excellence awarded by KELTRON.</p>
-                    <span class="click-hint">Click to flip back</span>
+                    <span class="click-text">Click to flip back</span>
                 </div>
 
             </div>
@@ -404,44 +432,42 @@ footer {
 
         <!-- BUSINESS -->
         <button class="certificate-card" type="button"
-            aria-pressed="false" onclick="flipCard(this)">
-
+                aria-pressed="false" onclick="flipCard(this)">
             <div class="certificate-inner">
 
                 <div class="certificate-front">
                     <h3>Business Organization and Entrepreneurship</h3>
                     <p>Certificate of Completion</p>
-                    <span class="click-hint">Click to view details ↻</span>
+                    <span class="click-text">Click to view details ↻</span>
                 </div>
 
                 <div class="certificate-back">
                     <h3>Business Organization and Entrepreneurship</h3>
                     <p>Certificate of Completion.</p>
-                    <span class="click-hint">Click to flip back</span>
+                    <span class="click-text">Click to flip back</span>
                 </div>
 
             </div>
         </button>
 
-        <!-- DATA SCIENCE AND AI -->
+        <!-- DATA SCIENCE + AI -->
         <button class="certificate-card" type="button"
-            aria-pressed="false" onclick="flipCard(this)">
-
+                aria-pressed="false" onclick="flipCard(this)">
             <div class="certificate-inner">
 
                 <div class="certificate-front">
                     <h3>Foundations of Data Science</h3>
                     <p>AI & Machine Learning Training Programme</p>
-                    <span class="click-hint">Click to view details ↻</span>
+                    <span class="click-text">Click to view details ↻</span>
                 </div>
 
                 <div class="certificate-back">
-                    <h3>Data Science, AI & Machine Learning</h3>
+                    <h3>Foundations of Data Science, AI & Machine Learning</h3>
                     <p>
                         Foundations of Data Science, AI & Machine Learning
                         Training Programme – Certificate of Completion.
                     </p>
-                    <span class="click-hint">Click to flip back</span>
+                    <span class="click-text">Click to flip back</span>
                 </div>
 
             </div>
@@ -449,20 +475,19 @@ footer {
 
         <!-- POWER BI -->
         <button class="certificate-card" type="button"
-            aria-pressed="false" onclick="flipCard(this)">
-
+                aria-pressed="false" onclick="flipCard(this)">
             <div class="certificate-inner">
 
                 <div class="certificate-front">
                     <h3>Microsoft Power BI</h3>
                     <p>Certificate</p>
-                    <span class="click-hint">Click to view details ↻</span>
+                    <span class="click-text">Click to view details ↻</span>
                 </div>
 
                 <div class="certificate-back">
                     <h3>Microsoft Power BI</h3>
                     <p>Microsoft Power BI certificate.</p>
-                    <span class="click-hint">Click to flip back</span>
+                    <span class="click-text">Click to flip back</span>
                 </div>
 
             </div>
@@ -470,20 +495,19 @@ footer {
 
         <!-- HACKERRANK -->
         <button class="certificate-card" type="button"
-            aria-pressed="false" onclick="flipCard(this)">
-
+                aria-pressed="false" onclick="flipCard(this)">
             <div class="certificate-inner">
 
                 <div class="certificate-front">
                     <h3>HackerRank Python (Basic)</h3>
                     <p>Certificate of Accomplishment</p>
-                    <span class="click-hint">Click to view details ↻</span>
+                    <span class="click-text">Click to view details ↻</span>
                 </div>
 
                 <div class="certificate-back">
                     <h3>HackerRank Python (Basic)</h3>
-                    <p>Certificate of Accomplishment.</p>
-                    <span class="click-hint">Click to flip back</span>
+                    <p>Certificate of Accomplishment in Python (Basic).</p>
+                    <span class="click-text">Click to flip back</span>
                 </div>
 
             </div>
@@ -495,12 +519,11 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
 
-    <h2 class="section-title">Contact Me</h2>
+    <h2 class="section-heading">Contact Me</h2>
 
-    <div class="cards">
+    <div class="card-grid contact-grid">
 
-        <div class="card contact-card">
-
+        <div class="info-card contact-card">
             <h3>Get In Touch</h3>
 
             <p>
@@ -524,7 +547,6 @@ footer {
                     View LinkedIn Profile
                 </a>
             </p>
-
         </div>
 
     </div>
@@ -539,8 +561,10 @@ footer {
 function flipCard(card) {
     card.classList.toggle("flipped");
 
-    const isFlipped = card.classList.contains("flipped");
-    card.setAttribute("aria-pressed", isFlipped);
+    card.setAttribute(
+        "aria-pressed",
+        card.classList.contains("flipped")
+    );
 }
 </script>
 
