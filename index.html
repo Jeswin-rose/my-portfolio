@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Jeswin Rose Antony, student and aspiring developer.">
     <title>Jeswin Rose Antony | Portfolio</title>
 
     <style>
@@ -19,52 +18,40 @@
             font-family: Arial, sans-serif;
             background: #0b1120;
             color: #e5e7eb;
-            line-height: 1.7;
-        }
-
-        :root {
-            --accent: #38bdf8;
-            --secondary: #818cf8;
-            --card: #172033;
+            line-height: 1.6;
         }
 
         header {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            background: #0b1120;
-            border-bottom: 1px solid #263247;
-            padding: 18px 8%;
+            background: #111827;
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .logo {
-            color: var(--accent);
-            font-size: 21px;
+            font-size: 24px;
             font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            gap: 22px;
-            flex-wrap: wrap;
+            color: white;
         }
 
         nav a {
-            color: #e5e7eb;
+            color: #d1d5db;
             text-decoration: none;
-            font-size: 14px;
+            margin: 10px;
+            transition: 0.3s;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: #38bdf8;
         }
 
         section {
-            padding: 85px 10%;
-            scroll-margin-top: 70px;
+            padding: 75px 8%;
         }
 
         .hero {
@@ -76,145 +63,184 @@
         }
 
         .hero h1 {
-            font-size: clamp(36px, 6vw, 58px);
-            line-height: 1.2;
-            margin: 15px 0;
+            font-size: clamp(38px, 6vw, 60px);
+            color: white;
+            margin-bottom: 10px;
         }
 
         .hero h1 span {
-            color: var(--accent);
+            color: white;
         }
 
-        .hero h3 {
-            color: var(--secondary);
-            font-size: 22px;
+        .hero h2 {
+            color: #38bdf8;
+            font-size: 28px;
+            margin-bottom: 15px;
         }
 
         .hero p {
             max-width: 650px;
-            color: #aab5c8;
-            margin: 15px 0 25px;
+            color: #cbd5e1;
+            font-size: 18px;
         }
 
         .btn {
             display: inline-block;
-            background: var(--accent);
-            color: #07111f;
-            padding: 11px 22px;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #0284c7;
+            color: white;
             border-radius: 7px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 5px 8px 5px 0;
             transition: 0.3s;
         }
 
         .btn:hover {
-            background: var(--secondary);
+            background: #0369a1;
             transform: translateY(-3px);
-        }
-
-        .outline {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
         }
 
         .section-title {
             font-size: 32px;
-            color: var(--accent);
-            margin-bottom: 28px;
+            color: #38bdf8;
+            margin-bottom: 30px;
         }
 
         .about-text {
             max-width: 850px;
-            color: #bdc8d9;
+            font-size: 18px;
+            color: #cbd5e1;
         }
 
-        .grid {
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
         }
 
         .card {
-            background: var(--card);
-            padding: 24px;
-            border: 1px solid #263750;
+            background: #172033;
+            padding: 25px;
             border-radius: 12px;
+            border: 1px solid #263449;
             transition: 0.3s;
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
+            transform: translateY(-6px);
+            border-color: #38bdf8;
         }
 
         .card h3 {
-            color: var(--accent);
-            margin-bottom: 10px;
+            color: #38bdf8;
+            margin-bottom: 12px;
         }
 
-        .card p, .card li {
-            color: #b9c4d5;
-            font-size: 14px;
+        .card p {
+            color: #cbd5e1;
         }
 
-        .card ul {
-            padding-left: 20px;
+        /* Interactive certificate flip cards */
+
+        .certificate-card {
+            background: transparent;
+            min-height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            text-align: left;
+            color: inherit;
+            font: inherit;
+            width: 100%;
         }
 
-        .skill {
-            display: inline-block;
-            background: #253653;
-            color: #7dd3fc;
-            padding: 9px 16px;
-            border-radius: 20px;
-            margin: 7px 5px;
-            font-size: 14px;
+        .certificate-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            height: 100%;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
         }
 
-        .project-links a {
-            color: var(--accent);
-            text-decoration: none;
+        .certificate-card.flipped .certificate-inner {
+            transform: rotateY(180deg);
         }
 
-        .project-links a:hover {
-            text-decoration: underline;
+        .certificate-front,
+        .certificate-back {
+            position: absolute;
+            inset: 0;
+            min-height: 220px;
+            padding: 25px;
+            border-radius: 12px;
+            background: #172033;
+            border: 1px solid #263449;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
 
-        .contact {
-            text-align: center;
+        .certificate-front h3,
+        .certificate-back h3 {
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+
+        .certificate-front p,
+        .certificate-back p {
+            color: #cbd5e1;
+        }
+
+        .certificate-back {
+            transform: rotateY(180deg);
+            background: #1e293b;
+            border-color: #38bdf8;
+        }
+
+        .click-hint {
+            margin-top: 15px;
+            color: #38bdf8;
+            font-size: 13px;
         }
 
         .contact p {
-            color: #bdc8d9;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+
+        .contact a {
+            color: #38bdf8;
+            text-decoration: none;
         }
 
         footer {
             text-align: center;
             padding: 25px;
-            border-top: 1px solid #263247;
-            color: #8996aa;
+            background: #111827;
+            color: #94a3b8;
         }
 
-        @media(max-width: 700px) {
+        @media (max-width: 600px) {
             header {
                 flex-direction: column;
                 gap: 12px;
             }
 
             nav {
-                justify-content: center;
-                gap: 12px;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
             }
 
             section {
-                padding: 65px 7%;
-            }
-
-            .hero {
-                min-height: 75vh;
+                padding: 55px 6%;
             }
         }
     </style>
@@ -222,193 +248,239 @@
 
 <body>
 
-<header>
-    <div class="logo">Jeswin.</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certificates</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+    <header>
+        <div class="logo">Jeswin.</div>
 
-<!-- HOME -->
-<section class="hero" id="home">
-    <h3>Hello, I'm</h3>
-    <h1>Jeswin Rose <span>Antony</span></h1>
-    <h3>Student | Python Developer | Aspiring Tech Professional</h3>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <p>
-        Welcome to my portfolio! I am a student at Rajagiri Higher
-        Secondary School, studying IMCA. I am passionate about
-        programming, technology, data science and building useful
-        applications.
-    </p>
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <h1>Hello, I'm <span>Jeswin Rose Antony</span></h1>
 
-    <div>
-        <a href="#projects" class="btn">Explore My Projects</a>
-        <a href="#contact" class="btn outline">Contact Me</a>
-    </div>
-</section>
+        <h2>Python Developer | IMCA Student</h2>
 
-<!-- ABOUT -->
-<section id="about">
-    <h2 class="section-title">About Me</h2>
+        <p>
+            Welcome to my personal portfolio. Explore my skills,
+            projects, certifications and achievements.
+        </p>
 
-    <p class="about-text">
-        I am Jeswin Rose Antony, a student at Rajagiri Higher
-        Secondary School studying IMCA. I have a strong interest
-        in programming, software development and emerging
-        technologies.
+        <a href="#about" class="btn">Explore My Portfolio</a>
+    </section>
 
-        <br><br>
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
 
-        I have completed certifications and training in Python,
-        Business Organization and Entrepreneurship, Data Science,
-        Artificial Intelligence and Machine Learning.
+        <p class="about-text">
+            I am an IMCA student interested in programming, data and
+            technology. I enjoy learning new skills and building
+            practical projects using Python and other technologies.
+        </p>
+    </section>
 
-        <br><br>
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
 
-        I enjoy learning new technologies and developing projects
-        that solve real-world problems. My goal is to improve my
-        technical knowledge and become a skilled developer.
-    </p>
-</section>
+        <div class="cards">
+            <div class="card">
+                <h3>Python</h3>
+                <p>Programming and application development.</p>
+            </div>
 
-<!-- SKILLS -->
-<section id="skills">
-    <h2 class="section-title">My Technical Skills</h2>
+            <div class="card">
+                <h3>Microsoft Power BI</h3>
+                <p>Data visualization and business intelligence.</p>
+            </div>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Programming</h3>
-            <span class="skill">Python</span>
-            <span class="skill">C</span>
-            <span class="skill">SQL</span>
+            <div class="card">
+                <h3>C Programming</h3>
+                <p>Programming fundamentals and problem solving.</p>
+            </div>
+
+            <div class="card">
+                <h3>SQL</h3>
+                <p>Database queries and data management.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>Data & Analytics</h3>
-            <span class="skill">Microsoft Power BI</span>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>MediCare</h3>
+                <p>
+                    A medicine reminder web application developed
+                    using Python, Flask, HTML and CSS.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>ScamShield</h3>
+                <p>
+                    A rule-based scam message detection system
+                    developed using Python and Streamlit.
+                </p>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>Web Technologies</h3>
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">Flask</span>
-            <span class="skill">Streamlit</span>
+    <!-- CERTIFICATES -->
+    <section id="certificates">
+        <h2 class="section-title">Certifications & Achievements</h2>
+
+        <p style="color:#94a3b8; margin-bottom:25px;">
+            Click on any certificate card to flip it and view the details.
+        </p>
+
+        <div class="cards">
+
+            <button class="certificate-card" type="button"
+                aria-pressed="false" onclick="flipCard(this)">
+                <div class="certificate-inner">
+                    <div class="certificate-front">
+                        <h3>Python</h3>
+                        <p>KELTRON – Certification of Excellence</p>
+                        <span class="click-hint">Click to view details ↻</span>
+                    </div>
+                    <div class="certificate-back">
+                        <h3>Python Certification</h3>
+                        <p>
+                            Certification of Excellence awarded by
+                            KELTRON.
+                        </p>
+                        <span class="click-hint">Click to flip back</span>
+                    </div>
+                </div>
+            </button>
+
+            <button class="certificate-card" type="button"
+                aria-pressed="false" onclick="flipCard(this)">
+                <div class="certificate-inner">
+                    <div class="certificate-front">
+                        <h3>Business Organization and Entrepreneurship</h3>
+                        <p>Certificate of Completion</p>
+                        <span class="click-hint">Click to view details ↻</span>
+                    </div>
+                    <div class="certificate-back">
+                        <h3>Business Organization and Entrepreneurship</h3>
+                        <p>
+                            Certificate of Completion.
+                        </p>
+                        <span class="click-hint">Click to flip back</span>
+                    </div>
+                </div>
+            </button>
+
+            <button class="certificate-card" type="button"
+                aria-pressed="false" onclick="flipCard(this)">
+                <div class="certificate-inner">
+                    <div class="certificate-front">
+                        <h3>Foundations of Data Science</h3>
+                        <p>AI & Machine Learning Training Programme</p>
+                        <span class="click-hint">Click to view details ↻</span>
+                    </div>
+                    <div class="certificate-back">
+                        <h3>Data Science, AI & Machine Learning</h3>
+                        <p>
+                            Foundations of Data Science and AI & Machine
+                            Learning Training Programme – Certificate
+                            of Completion.
+                        </p>
+                        <span class="click-hint">Click to flip back</span>
+                    </div>
+                </div>
+            </button>
+
+            <button class="certificate-card" type="button"
+                aria-pressed="false" onclick="flipCard(this)">
+                <div class="certificate-inner">
+                    <div class="certificate-front">
+                        <h3>Microsoft Power BI</h3>
+                        <p>Certificate</p>
+                        <span class="click-hint">Click to view details ↻</span>
+                    </div>
+                    <div class="certificate-back">
+                        <h3>Microsoft Power BI</h3>
+                        <p>
+                            Microsoft Power BI certificate.
+                        </p>
+                        <span class="click-hint">Click to flip back</span>
+                    </div>
+                </div>
+            </button>
+
+            <button class="certificate-card" type="button"
+                aria-pressed="false" onclick="flipCard(this)">
+                <div class="certificate-inner">
+                    <div class="certificate-front">
+                        <h3>HackerRank Python (Basic)</h3>
+                        <p>Certificate of Accomplishment</p>
+                        <span class="click-hint">Click to view details ↻</span>
+                    </div>
+                    <div class="certificate-back">
+                        <h3>HackerRank Python (Basic)</h3>
+                        <p>
+                            Certificate of Accomplishment in Python (Basic).
+                        </p>
+                        <span class="click-hint">Click to flip back</span>
+                    </div>
+                </div>
+            </button>
+
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CERTIFICATIONS -->
-<section id="certifications">
-    <h2 class="section-title">Certifications & Achievements</h2>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
 
-    <div class="grid">
+        <p>
+            Email:
+            <a href="mailto:jeswinrose8@gmail.com">
+                jeswinrose8@gmail.com
+            </a>
+        </p>
 
-        <div class="card">
-            <h3>Python – KELTRON</h3>
-            <p>Certification of Excellence in Python.</p>
-        </div>
+        <p>
+            GitHub:
+            <a href="https://github.com/Jeswin-rose" target="_blank">
+                github.com/Jeswin-rose
+            </a>
+        </p>
 
-        <div class="card">
-            <h3>Business Organization & Entrepreneurship</h3>
-            <p>Certificate of Completion.</p>
-        </div>
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/jeswin-rose-antony-448506431/"
+               target="_blank">
+                View my LinkedIn Profile
+            </a>
+        </p>
+    </section>
 
-        <div class="card">
-            <h3>Foundations of Data Science</h3>
-            <p>Certificate of Completion.</p>
-        </div>
+    <footer>
+        <p>© 2026 Jeswin Rose Antony. All Rights Reserved.</p>
+    </footer>
 
-        <div class="card">
-            <h3>AI & Machine Learning</h3>
-            <p>Training Programme Certificate.</p>
-        </div>
+    <script>
+        function flipCard(card) {
+            card.classList.toggle("flipped");
 
-        <div class="card">
-            <h3>HackerRank Python (Basic)</h3>
-            <p>Certificate of Accomplishment.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-    <h2 class="section-title">My Projects</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>MediCare</h3>
-            <p>
-                A medicine reminder web application built using
-                Python and Flask. It helps users manage medicine
-                reminders and maintain their medication schedule.
-            </p>
-
-            <br>
-            <p><strong>Technologies:</strong></p>
-            <span class="skill">Python</span>
-            <span class="skill">Flask</span>
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-        </div>
-
-        <div class="card">
-            <h3>ScamShield</h3>
-            <p>
-                A rule-based scam message detection system built
-                using Python and Streamlit. It identifies
-                potentially suspicious messages using predefined
-                detection rules.
-            </p>
-
-            <br>
-            <p><strong>Technologies:</strong></p>
-            <span class="skill">Python</span>
-            <span class="skill">Streamlit</span>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-    <h2 class="section-title">Get In Touch</h2>
-
-    <p>
-        Thank you for visiting my portfolio.
-        Feel free to connect with me!
-    </p>
-
-    <p>
-        <strong>Email:</strong>
-        <a href="mailto:jeswinrose8@gmail.com" style="color:#38bdf8">
-            jeswinrose8@gmail.com
-        </a>
-    </p>
-
-    <a href="https://github.com/Jeswin-rose"
-       target="_blank" rel="noopener noreferrer" class="btn">
-       GitHub
-    </a>
-
-    <a href="https://www.linkedin.com/in/jeswin-rose-antony-448506431/"
-       target="_blank" rel="noopener noreferrer" class="btn outline">
-       LinkedIn
-    </a>
-</section>
-
-<footer>
-    <p>© 2026 Jeswin Rose Antony | Personal Portfolio</p>
-    <p>Designed and developed with HTML & CSS</p>
-</footer>
+            const isFlipped = card.classList.contains("flipped");
+            card.setAttribute("aria-pressed", isFlipped);
+        }
+    </script>
 
 </body>
 </html>
